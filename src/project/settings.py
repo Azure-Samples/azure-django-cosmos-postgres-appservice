@@ -101,11 +101,11 @@ OPENCENSUS = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DBSERVER_DB"),
-        "USER": os.environ.get("DBSERVER_USER"),
-        "PASSWORD": os.environ.get("DBSERVER_PASSWORD"),
-        "HOST": os.environ.get("DBSERVER_HOST"),
-        "PORT": os.environ.get("DBSERVER_PORT"),
+        "NAME": os.environ.get("POSTGRES_DATABASE"),
+        "USER": os.environ.get("POSTGRES_USERNAME"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+        "HOST": os.environ.get("POSTGRES_HOST"),
+        "PORT": os.environ.get("POSTGRES_PORT"),
     }
 }
 
@@ -164,3 +164,4 @@ LOGGING = {
 }
 
 DJANGO_LOG_LEVEL = DEBUG
+DEBUG_PROPAGATE_EXCEPTIONS = DEBUG  # Enables VS Code debugger to break on raised exceptions
