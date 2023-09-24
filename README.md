@@ -1,3 +1,6 @@
+# Deploy Django Application with PostgreSQL via Azure Container Apps
+
+This project deploys a web application for a space travel agency using Django. The application can be deployed to Azure with Azure App Service using the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview).
 
 ## Opening the project
 
@@ -10,17 +13,16 @@ If you're not using one of those options for opening the project, then you'll ne
 1. Install production requirements:
 
     ```sh
-    python -m pip install -r src/requirements.txt
+    python3 -m pip install -r src/requirements.txt
     ```
 
 
 1. Apply database migrations and seed initial data:
 
     ```sh
-    python src/manage.py migrate
-    python src/manage.py loaddata src/seed_data.json
-
-```
+    python3 src/manage.py migrate
+    python3 src/manage.py loaddata src/seed_data.json
+    ```
 
 ## Running locally
 
@@ -48,7 +50,7 @@ python3 -m gunicorn project.wsgi:application -c src/gunicorn.conf.py --pythonpat
 
 ## Deployment
 
-This repo is set up for deployment on [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview) using the `Dockerfile` and the configuration files in the `infra` folder.
+This repo is set up for deployment on Azure via Azure App Service.
 
 Steps for deployment:
 
@@ -85,3 +87,4 @@ to be stored as Github action secrets. To set that up, run:
 ```shell
 azd pipeline config
 ```
+
